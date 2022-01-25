@@ -1,3 +1,3 @@
-/mnt/c/Users/Owner/OneDrive/Desktop/22s-pa01-cout-this-one-hazel-endl/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/Owner/OneDrive/Desktop/22s-pa01-cout-this-one-hazel-endl/cmake-build-debug/CMakeFiles/edit_cache.dir
-/mnt/c/Users/Owner/OneDrive/Desktop/22s-pa01-cout-this-one-hazel-endl/cmake-build-debug/CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir
+/Users/hazeleroy/Desktop/CS3353/Projects/22s-pa01-cout-this-one-hazel-endl/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/hazeleroy/Desktop/CS3353/Projects/22s-pa01-cout-this-one-hazel-endl/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/hazeleroy/Desktop/CS3353/Projects/22s-pa01-cout-this-one-hazel-endl/cmake-build-debug/CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir
