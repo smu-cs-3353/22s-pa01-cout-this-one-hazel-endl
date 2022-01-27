@@ -11,19 +11,15 @@ class Painting {
     public:
     Painting();
 
-    Painting  (int IDnum, double value);
+    Painting  (int IDnum, double value, double w, double h);
 
-        int getID();
-        void setID (int num);
-
-        void setPrice (double value);
-        double getPrice();
-
-        void print();
+     void print();
 
     private:
         int ID;
         double Price;
+        double Width;
+        double Height;
 };
 
 
