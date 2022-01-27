@@ -4,9 +4,14 @@
 
 #ifndef INC_22S_PA01_COUT_THIS_ONE_HAZEL_ENDL_ALGORITHM_H
 #define INC_22S_PA01_COUT_THIS_ONE_HAZEL_ENDL_ALGORITHM_H
-
+#include "Painting.h"
 
 class Algorithm {
+public:
+    Algorithm();
+    void readFile();
+private:
+    Painting paintingVec[];
 
 };
 

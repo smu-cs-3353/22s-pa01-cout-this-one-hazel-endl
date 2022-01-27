@@ -5,3 +5,11 @@
 #include "Algorithm.h"
 #include <iostream>
 using namespace std;
+Algorithm::Algorithm() {
+}
+Algorithm::Algorithm(){
+
+}
+void Algorithm::readFile(){
+
+}

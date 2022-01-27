@@ -11,7 +11,7 @@ class Painting {
     public:
     Painting();
 
-    Painting  (int IDnum, double value, double w, double h);
+    Painting(int IDnum, double value, double w, double h);
 
      void print();
 
