@@ -1,0 +1,14 @@
+//
+// Created by Hazel Eroy on 1/26/22.
+//
+
+#ifndef INC_22S_PA01_COUT_THIS_ONE_HAZEL_ENDL_PAINTING_H
+#define INC_22S_PA01_COUT_THIS_ONE_HAZEL_ENDL_PAINTING_H
+
+
+class Painting {
+
+};
+
+
+#endif //INC_22S_PA01_COUT_THIS_ONE_HAZEL_ENDL_PAINTING_H
