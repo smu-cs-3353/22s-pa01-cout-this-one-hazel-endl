@@ -2,6 +2,8 @@
 // Created by London Kasper on 1/24/2022.
 //
 #include <iostream>
+#include "Painting.h"
+
 #include <fstream>
 
 using namespace std;
@@ -39,6 +41,8 @@ int main(int argc,  char *argv[]){
             inFS.getline(buffer, 3000, '\n');
             string height = buffer;
             cout << "Painting ID: " << id << "  Price: " << price << "  Width: " << width << endl;
+            Painting newPainting(stoi(id), stod(price), stod(width), stod(height));
+            newPainting.print();
             inFS.getline(buffer, 3000, ' ');
         }
 
