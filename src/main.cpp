@@ -3,13 +3,16 @@
 //
 #include <iostream>
 #include "Painting.h"
+#include "Algorithm.h"
 #include <fstream>
 
 using namespace std;
 int main(int argc,  char *argv[]){
+    //Algorithm newAlgorithm();
     if(argc > 1){
         //cout << argv[1] << endl; //output the command line argument
         char* fileIn = argv[1];
+
         //will also need three output files to be declared, each one appended to the end of the input file's name (see project guidelines)
         fstream inFS(fileIn);
         if(!inFS.is_open()){

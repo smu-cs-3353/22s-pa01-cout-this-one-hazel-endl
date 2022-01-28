@@ -9,6 +9,7 @@
 class Algorithm {
 public:
     Algorithm();
+    Algorithm(char*);
     void readFile();
 private:
     Painting paintingVec[];
