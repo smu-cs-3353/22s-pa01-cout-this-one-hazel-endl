@@ -5,15 +5,16 @@
 #ifndef INC_22S_PA01_COUT_THIS_ONE_HAZEL_ENDL_ALGORITHM_H
 #define INC_22S_PA01_COUT_THIS_ONE_HAZEL_ENDL_ALGORITHM_H
 #include "Painting.h"
-
+#include <vector>
 class Algorithm {
 public:
     Algorithm();
     Algorithm(char*);
     void readFile();
-private:
-    Painting paintingVec[];
 
+private:
+    vector<Painting> paintingVec;
+    char* inputFile;
 };
 
 
