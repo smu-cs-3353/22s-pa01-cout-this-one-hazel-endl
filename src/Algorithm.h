@@ -12,7 +12,7 @@ public:
     Algorithm(char*);
     void readFile();
     void expFirst();
-    bool compareInterval(Painting& i1, Painting& i2);
+    static bool comparePrice(const Painting& i1, const Painting& i2);
 private:
     vector<Painting> paintingVec;
     char* inputFile;

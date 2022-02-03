@@ -14,7 +14,7 @@ class Painting {
     Painting(int IDnum, double value, double w, double h);
 
      void print();
-     double getPrice();
+     const double & getPrice() const;
     private:
         int ID;
         double Price;

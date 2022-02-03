@@ -5,6 +5,7 @@
 #include "Algorithm.h"
 #include <iostream>
 #include <fstream>
+#include <algorithm>
 using namespace std;
 Algorithm::Algorithm() {
 
@@ -49,17 +50,20 @@ void Algorithm::readFile(){
         cout << "The number of Paintings in paintingVec is: " << paintingVec.size() << endl;
         inFS.getline(buffer, 3000, ' ');
     }
+    cout << "Testing expFirst()"<< endl;
+    expFirst();
 }
 
 void Algorithm::expFirst() {
-
+sort(paintingVec.begin(), paintingVec.end(), comparePrice);
+cout << "First painting in paintingVec: ";
+paintingVec.at(0).print();
+cout << "last painting in painting Vec:";
+paintingVec.at(paintingVec.size()-1).print();
 }
 
-bool Algorithm::compareInterval(Painting &i1, Painting &i2) {
-    if(i1.getPrice() > i2.getPrice()){
-        return false; 
-    }
-    return true;
+bool Algorithm::comparePrice(const Painting &i1, const Painting &i2) {
+    return (i1.getPrice() > i2.getPrice());
 }
 
 

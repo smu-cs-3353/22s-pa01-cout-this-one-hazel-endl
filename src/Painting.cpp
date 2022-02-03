@@ -24,6 +24,6 @@ void Painting::print(){
     cout << "Price: $" << Price <<  endl;
     cout << "Dimensions (W x H): " << Width << " " << Height << endl;
 };
-double Painting::getPrice(){
+const double & Painting::getPrice() const{
     return Price;
 }
