@@ -16,6 +16,7 @@ public:
 private:
     vector<Painting> paintingVec;
     char* inputFile;
+    double maxSize;
 };
 
 

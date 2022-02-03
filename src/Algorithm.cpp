@@ -28,6 +28,7 @@ void Algorithm::readFile(){
     inFS.getline(buffer, 3000, ' ');
     maxWidth = buffer;
     cout << maxWidth << endl;
+    maxSize = stoi(maxWidth);
     inFS.getline(buffer, 3000, '\n');
     string maxHeight = buffer;
     cout << maxHeight << endl;
@@ -56,10 +57,27 @@ void Algorithm::readFile(){
 
 void Algorithm::expFirst() {
 sort(paintingVec.begin(), paintingVec.end(), comparePrice);
-cout << "First painting in paintingVec: ";
-paintingVec.at(0).print();
-cout << "last painting in painting Vec:";
-paintingVec.at(paintingVec.size()-1).print();
+//cout << "First painting in paintingVec: ";
+//paintingVec.at(0).print();
+//cout << "last painting in painting Vec:";
+//paintingVec.at(paintingVec.size()-1).print();
+vector<Painting> mostExpFirst;
+int sizeTaken = 0;
+int counter = 0;
+while(true){
+    if(counter >= paintingVec.size()) {
+    break;
+    }
+    else if(maxSize - (sizeTaken + paintingVec.at(counter).getWidth())>=0){
+    mostExpFirst.push_back(paintingVec.at(counter));
+    sizeTaken += paintingVec.at(counter).getWidth();
+}
+
+    counter++;
+}
+for(int i = 0; i< mostExpFirst.size(); i++){
+    mostExpFirst.at(i).print();
+}
 }
 
 bool Algorithm::comparePrice(const Painting &i1, const Painting &i2) {

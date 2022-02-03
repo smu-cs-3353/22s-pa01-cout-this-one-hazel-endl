@@ -27,3 +27,6 @@ void Painting::print(){
 const double & Painting::getPrice() const{
     return Price;
 }
+double Painting::getWidth(){
+    return Width;
+}

@@ -15,6 +15,7 @@ class Painting {
 
      void print();
      const double & getPrice() const;
+     double getWidth();
     private:
         int ID;
         double Price;
