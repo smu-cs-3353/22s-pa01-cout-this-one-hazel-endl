@@ -14,12 +14,14 @@ class Painting {
     Painting(int IDnum, double value, double w, double h);
 
      void print();
-
+     double getPrice();
     private:
         int ID;
         double Price;
         double Width;
         double Height;
+
+
 };
 
 

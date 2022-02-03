@@ -51,4 +51,15 @@ void Algorithm::readFile(){
     }
 }
 
+void Algorithm::expFirst() {
+
+}
+
+bool Algorithm::compareInterval(Painting &i1, Painting &i2) {
+    if(i1.getPrice() > i2.getPrice()){
+        return false; 
+    }
+    return true;
+}
+
 
