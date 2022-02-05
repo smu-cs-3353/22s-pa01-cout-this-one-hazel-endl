@@ -15,13 +15,13 @@ class Painting {
 
      void print();
      const double & getPrice() const;
+     const int & getID() const;
      double getWidth();
     private:
         int ID;
         double Price;
         double Width;
         double Height;
-
 
 };
 

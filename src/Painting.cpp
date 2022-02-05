@@ -20,13 +20,18 @@ Painting::Painting(int IDnum, double value, double w, double h) {
 }
 
 void Painting::print(){
-    cout << "ID: " << ID << endl;
+    cout << ID << " " << Price << " " << Width << " " << Height << endl;
+    /*cout << "ID: " << ID << endl;
     cout << "Price: $" << Price <<  endl;
-    cout << "Dimensions (W x H): " << Width << " " << Height << endl;
+    cout << "Dimensions (W x H): " << Width << " " << Height << endl;*/
 };
 const double & Painting::getPrice() const{
     return Price;
 }
 double Painting::getWidth(){
     return Width;
+}
+
+const int &Painting::getID() const {
+    return ID;
 }

@@ -5,6 +5,7 @@
 #ifndef INC_22S_PA01_COUT_THIS_ONE_HAZEL_ENDL_ALGORITHM_H
 #define INC_22S_PA01_COUT_THIS_ONE_HAZEL_ENDL_ALGORITHM_H
 #include "Painting.h"
+#include "Subset.h"
 #include <vector>
 class Algorithm {
 public:
@@ -13,6 +14,9 @@ public:
     void readFile();
     void expFirst();
     static bool comparePrice(const Painting& i1, const Painting& i2);
+
+    void bruteForce();
+    
 private:
     vector<Painting> paintingVec;
     char* inputFile;
