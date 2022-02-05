@@ -12,7 +12,7 @@ class Painting {
     Painting();
 
     Painting(int IDnum, double value, double w, double h);
-
+    double getPriceByWidth();
      void print();
      const double & getPrice() const;
      double getWidth();
@@ -21,6 +21,7 @@ class Painting {
         double Price;
         double Width;
         double Height;
+        double PriceByWidth;
 
 
 };

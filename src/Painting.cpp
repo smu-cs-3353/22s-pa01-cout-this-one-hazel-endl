@@ -10,6 +10,7 @@ Painting::Painting() {
      Price = -1.0;
      Width = -1.0;
      Height = -1.0;
+     PriceByWidth = 0;
 }
 
 Painting::Painting(int IDnum, double value, double w, double h) {
@@ -17,6 +18,7 @@ Painting::Painting(int IDnum, double value, double w, double h) {
      Price = value;
      Width = w;
      Height = h;
+     PriceByWidth = Price/Width;
 }
 
 void Painting::print(){
@@ -29,4 +31,7 @@ const double & Painting::getPrice() const{
 }
 double Painting::getWidth(){
     return Width;
+}
+double Painting::getPriceByWidth() {
+    return PriceByWidth;
 }
