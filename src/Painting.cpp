@@ -29,9 +29,9 @@ void Painting::print(){
 const double & Painting::getPrice() const{
     return Price;
 }
+const double & Painting::getPriceByWidth() const{
+    return PriceByWidth;
+}
 double Painting::getWidth(){
     return Width;
-}
-double Painting::getPriceByWidth() {
-    return PriceByWidth;
 }

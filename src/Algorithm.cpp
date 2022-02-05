@@ -27,11 +27,10 @@ void Algorithm::readFile(){
     char buffer[3000];
     inFS.getline(buffer, 3000, ' ');
     maxWidth = buffer;
-    cout << maxWidth << endl;
+    cout << "Maximum width: " << maxWidth << endl;
     maxSize = stoi(maxWidth);
     inFS.getline(buffer, 3000, '\n');
     string maxHeight = buffer;
-    cout << maxHeight << endl;
     inFS.getline(buffer, 3000, '\n');
     string numPaintings = buffer;
     cout << "Number of paintings in this file: " << numPaintings << endl;
@@ -46,21 +45,19 @@ void Algorithm::readFile(){
         string height = buffer;
         //cout << "Painting ID: " << id << "  Price: " << price << "  Width: " << width << endl;
         Painting newPainting(stoi(id), stod(price), stod(width), stod(height));
-        newPainting.print();
+        //newPainting.print();
         paintingVec.push_back(newPainting);
-        cout << "The number of Paintings in paintingVec is: " << paintingVec.size() << endl;
+        //cout << "The number of Paintings in paintingVec is: " << paintingVec.size() << endl;
         inFS.getline(buffer, 3000, ' ');
     }
-    cout << "Testing expFirst()"<< endl;
-    expFirst();
+        cout << "Testing expFirst()"<< endl;
+        expFirst();
+          cout << "Testing customAlgo" << endl;
+          customAlgo();
 }
 
 void Algorithm::expFirst() {
 sort(paintingVec.begin(), paintingVec.end(), comparePrice);
-//cout << "First painting in paintingVec: ";
-//paintingVec.at(0).print();
-//cout << "last painting in painting Vec:";
-//paintingVec.at(paintingVec.size()-1).print();
 vector<Painting> mostExpFirst;
 int sizeTaken = 0;
 int counter = 0;
@@ -72,16 +69,51 @@ while(true){
     mostExpFirst.push_back(paintingVec.at(counter));
     sizeTaken += paintingVec.at(counter).getWidth();
 }
-
     counter++;
 }
+double totalPrice = 0;
+double totalWidth = 0;
 for(int i = 0; i< mostExpFirst.size(); i++){
-    mostExpFirst.at(i).print();
+    //mostExpFirst.at(i).print();
+    totalPrice+= mostExpFirst.at(i).getPrice();
+    totalWidth+= mostExpFirst.at(i).getWidth();
 }
+cout << "The total price from the most expensive first algorithm is: " << totalPrice << endl;
+cout << "Total width taken up: " << totalWidth << endl;
+}
+
+void Algorithm::customAlgo(){
+    sort(paintingVec.begin(), paintingVec.end(), comparePriceByWidth);
+    vector<Painting> bestRatioFirst;
+    int sizeTaken = 0;
+    int counter = 0;
+    while(true){
+        if(counter >= paintingVec.size()) {
+            break;
+        }
+        else if(maxSize - (sizeTaken + paintingVec.at(counter).getWidth())>=0){
+            bestRatioFirst.push_back(paintingVec.at(counter));
+            sizeTaken += paintingVec.at(counter).getWidth();
+        }
+        counter++;
+    }
+    double totalPrice = 0;
+    double totalWidth = 0;
+    for(int i = 0; i< bestRatioFirst.size(); i++){
+        //bestRatioFirst.at(i).print();
+        totalPrice+= bestRatioFirst.at(i).getPrice();
+        totalWidth+= bestRatioFirst.at(i).getWidth();
+    }
+    cout << "The total price from the custom algorithm is: " << totalPrice << endl;
+    cout << "The total width taken up is: " << totalWidth << endl;
 }
 
 bool Algorithm::comparePrice(const Painting &i1, const Painting &i2) {
     return (i1.getPrice() > i2.getPrice());
+}
+
+bool Algorithm::comparePriceByWidth(const Painting &i1, const Painting &i2) {
+    return (i1.getPriceByWidth() > i2.getPriceByWidth());
 }
 
 

@@ -12,18 +12,18 @@ class Painting {
     Painting();
 
     Painting(int IDnum, double value, double w, double h);
-    double getPriceByWidth();
+
      void print();
      const double & getPrice() const;
+     const double & getPriceByWidth() const;
      double getWidth();
+
     private:
         int ID;
         double Price;
         double Width;
         double Height;
         double PriceByWidth;
-
-
 };
 
 

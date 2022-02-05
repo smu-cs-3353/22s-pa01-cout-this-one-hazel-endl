@@ -12,11 +12,16 @@ public:
     Algorithm(char*);
     void readFile();
     void expFirst();
+    void customAlgo();
     static bool comparePrice(const Painting& i1, const Painting& i2);
+    static bool comparePriceByWidth(const Painting &i1, const Painting &i2);
 private:
     vector<Painting> paintingVec;
     char* inputFile;
     double maxSize;
+
+
+
 };
 
 
