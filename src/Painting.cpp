@@ -32,6 +32,15 @@ const double & Painting::getPrice() const{
 const double & Painting::getPriceByWidth() const{
     return PriceByWidth;
 }
-double Painting::getWidth(){
+ double Painting::getWidth(){
     return Width;
 }
+
+const double &Painting::getHeight() const {
+    return Height;
+}
+
+const int &Painting::getID() const {
+    return ID;
+}
+

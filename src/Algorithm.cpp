@@ -13,7 +13,7 @@ Algorithm::Algorithm() {
 Algorithm::Algorithm(char* fileName) {
     inputFile = fileName;
     inputFileString = inputFile;
-
+    inputFileString = inputFileString.substr(0, inputFileString.length()-4);
 //    file.open(fileName+'-bruteforce',ios::out);
 //
 //    file.open(fileName+'-custom',ios::out);
@@ -48,17 +48,14 @@ void Algorithm::readFile(){
         string width = buffer;
         inFS.getline(buffer, 3000, '\n');
         string height = buffer;
-        //cout << "Painting ID: " << id << "  Price: " << price << "  Width: " << width << endl;
         Painting newPainting(stoi(id), stod(price), stod(width), stod(height));
-        //newPainting.print();
         paintingVec.push_back(newPainting);
-        //cout << "The number of Paintings in paintingVec is: " << paintingVec.size() << endl;
         inFS.getline(buffer, 3000, ' ');
     }
         cout << "Testing expFirst()"<< endl;
         expFirst();
-//          cout << "Testing customAlgo" << endl;
-//          customAlgo();
+          cout << "Testing customAlgo" << endl;
+          customAlgo();
 }
 
 void Algorithm::expFirst() {
@@ -79,15 +76,13 @@ while(true){
 double totalPrice = 0;
 double totalWidth = 0;
 for(int i = 0; i< mostExpFirst.size(); i++){
-    //mostExpFirst.at(i).print();
     totalPrice+= mostExpFirst.at(i).getPrice();
     totalWidth+= mostExpFirst.at(i).getWidth();
 }
 cout << "The total price from the most expensive first algorithm is: " << totalPrice << endl;
 cout << "Total width taken up: " << totalWidth << endl;
 fstream file;
-
-file.open(inputFileString+"-highvalue",ios::out);
+file.open(inputFileString+"-highvalue.txt",ios::out); //FIXME fix the .txt being included from initial filename
     if(!file)
     {
         cout<<"Error in creating file!!!";
@@ -95,7 +90,7 @@ file.open(inputFileString+"-highvalue",ios::out);
     else{
         file<< totalPrice << endl;
         for(int i = 0; i<mostExpFirst.size(); i++){
-            mostExpFirst.at(i)
+            file << mostExpFirst.at(i).getID() << " " << mostExpFirst.at(i).getPrice() << " " << mostExpFirst.at(i).getWidth() << " " << mostExpFirst.at(i).getHeight() << endl;
         }
     }
 
@@ -125,6 +120,18 @@ void Algorithm::customAlgo(){
     }
     cout << "The total price from the custom algorithm is: " << totalPrice<< endl;
     cout << "The total width taken up is: " << totalWidth << endl;
+    fstream file;
+    file.open(inputFileString+"-custom.txt",ios::out);
+    if(!file)
+    {
+        cout<<"Error in creating file!!!";
+    }
+    else{
+        file<< totalPrice << endl;
+        for(int i = 0; i<bestRatioFirst.size(); i++){
+            file << bestRatioFirst.at(i).getID() << " " << bestRatioFirst.at(i).getPrice() << " " << bestRatioFirst.at(i).getWidth() << " " << bestRatioFirst.at(i).getHeight() << endl;
+        }
+    }
 }
 
 bool Algorithm::comparePrice(const Painting &i1, const Painting &i2) {

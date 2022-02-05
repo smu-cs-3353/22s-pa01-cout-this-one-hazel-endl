@@ -16,6 +16,9 @@ class Painting {
      void print();
      const double & getPrice() const;
      const double & getPriceByWidth() const;
+     //const double & getWidth() const;
+     const double & getHeight() const;
+     const int & getID() const;
      double getWidth();
 
     private:
