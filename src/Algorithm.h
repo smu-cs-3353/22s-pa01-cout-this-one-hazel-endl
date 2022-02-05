@@ -6,6 +6,7 @@
 #define INC_22S_PA01_COUT_THIS_ONE_HAZEL_ENDL_ALGORITHM_H
 #include "Painting.h"
 #include <vector>
+#include <fstream>
 class Algorithm {
 public:
     Algorithm();
@@ -18,7 +19,10 @@ public:
 private:
     vector<Painting> paintingVec;
     char* inputFile;
+    string inputFileString;
     double maxSize;
+
+
 
 
 

@@ -12,6 +12,11 @@ Algorithm::Algorithm() {
 }
 Algorithm::Algorithm(char* fileName) {
     inputFile = fileName;
+    inputFileString = inputFile;
+
+//    file.open(fileName+'-bruteforce',ios::out);
+//
+//    file.open(fileName+'-custom',ios::out);
     readFile();
 }
 
@@ -52,8 +57,8 @@ void Algorithm::readFile(){
     }
         cout << "Testing expFirst()"<< endl;
         expFirst();
-          cout << "Testing customAlgo" << endl;
-          customAlgo();
+//          cout << "Testing customAlgo" << endl;
+//          customAlgo();
 }
 
 void Algorithm::expFirst() {
@@ -80,6 +85,20 @@ for(int i = 0; i< mostExpFirst.size(); i++){
 }
 cout << "The total price from the most expensive first algorithm is: " << totalPrice << endl;
 cout << "Total width taken up: " << totalWidth << endl;
+fstream file;
+
+file.open(inputFileString+"-highvalue",ios::out);
+    if(!file)
+    {
+        cout<<"Error in creating file!!!";
+    }
+    else{
+        file<< totalPrice << endl;
+        for(int i = 0; i<mostExpFirst.size(); i++){
+            mostExpFirst.at(i)
+        }
+    }
+
 }
 
 void Algorithm::customAlgo(){
@@ -104,7 +123,7 @@ void Algorithm::customAlgo(){
         totalPrice+= bestRatioFirst.at(i).getPrice();
         totalWidth+= bestRatioFirst.at(i).getWidth();
     }
-    cout << "The total price from the custom algorithm is: " << totalPrice << endl;
+    cout << "The total price from the custom algorithm is: " << totalPrice<< endl;
     cout << "The total width taken up is: " << totalWidth << endl;
 }
 
