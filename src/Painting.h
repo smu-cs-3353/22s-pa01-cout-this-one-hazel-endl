@@ -5,6 +5,7 @@
 #ifndef INC_22S_PA01_COUT_THIS_ONE_HAZEL_ENDL_PAINTING_H
 #define INC_22S_PA01_COUT_THIS_ONE_HAZEL_ENDL_PAINTING_H
 #include <iostream>
+#include <string>
 using namespace std;
 class Painting {
 
@@ -17,6 +18,8 @@ class Painting {
      const double & getPrice() const;
      const int & getID() const;
      double getWidth();
+     double getHeight();
+
     private:
         int ID;
         double Price;

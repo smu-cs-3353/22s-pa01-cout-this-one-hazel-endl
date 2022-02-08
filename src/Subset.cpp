@@ -1,3 +1,4 @@
+#include <algorithm>
 //
 // Created by Hazel Eroy on 2/4/22.
 //
@@ -6,6 +7,8 @@
 #include <iostream>
 #include <fstream>
 #include <bits/stdc++.h>
+#include <string>
+using namespace std;
 
 Subset::Subset() {
 
@@ -50,6 +53,14 @@ void Subset::printPaintings() {
     for (int i = 0; i < subsetPainting.size(); i++){
         subsetPainting[i].print();
     }
+
 }
+
+vector<Painting> Subset::getVector() {
+    return subsetPainting;
+}
+
+
+
 
 

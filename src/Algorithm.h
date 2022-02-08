@@ -7,6 +7,7 @@
 #include "Painting.h"
 #include "Subset.h"
 #include <vector>
+#include <string>
 class Algorithm {
 public:
     Algorithm();
@@ -16,7 +17,7 @@ public:
     static bool comparePrice(const Painting& i1, const Painting& i2);
 
     void bruteForce();
-    
+
 private:
     vector<Painting> paintingVec;
     char* inputFile;

@@ -5,6 +5,7 @@
 using namespace std;
 #include "Painting.h"
 
+
 Painting::Painting() {
      ID = -1;
      Price = -1.0;
@@ -30,6 +31,10 @@ const double & Painting::getPrice() const{
 }
 double Painting::getWidth(){
     return Width;
+}
+
+double Painting::getHeight(){
+    return Height;
 }
 
 const int &Painting::getID() const {

@@ -9,6 +9,7 @@
 #include <bits/stdc++.h>
 #include <vector>
 #include "Subset.h"
+#include <string>
 using namespace std;
 Algorithm::Algorithm() {
 
@@ -125,9 +126,26 @@ void Algorithm::bruteForce() {
     maxVal.print();
     cout << maxVal.getTotalValue() << endl << endl;
 
-    cout << "Output format: " << endl;
-    cout << maxVal.getTotalValue();
-    cout << endl;
+    fstream outputFile;
+    outputFile.open("-bruteForce.txt",ios::out);
+    if(!outputFile)
+    {
+        cout<<"Error in creating file!!!";
+    }
+    else{
+        outputFile << maxVal.getTotalValue();
+        outputFile << endl;
+        for (int i = 0; i < maxVal.size(); i ++){
+            outputFile << maxVal.getVector()[i].getID();
+            outputFile << " ";
+            outputFile << maxVal.getVector()[i].getPrice();
+            outputFile << " ";
+            outputFile << maxVal.getVector()[i].getWidth();
+            outputFile << " ";
+            outputFile << maxVal.getVector()[i].getHeight();
+            outputFile << endl;
+        }
+    }
 
     maxVal.printPaintings();
 }
