@@ -62,8 +62,8 @@ void Algorithm::readFile(){
           customAlgo();
 
     cout << "Testing expFirst()"<< endl;
-    //expFirst();
-    bruteForce();
+    expFirst();
+    //bruteForce();
 }
 
 void Algorithm::expFirst() {
