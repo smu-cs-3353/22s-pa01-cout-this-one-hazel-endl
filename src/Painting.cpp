@@ -5,6 +5,7 @@
 using namespace std;
 #include "Painting.h"
 
+
 Painting::Painting() {
      ID = -1;
      Price = -1.0;
@@ -22,9 +23,10 @@ Painting::Painting(int IDnum, double value, double w, double h) {
 }
 
 void Painting::print(){
-    cout << "ID: " << ID << endl;
+    cout << ID << " " << Price << " " << Width << " " << Height << endl;
+    /*cout << "ID: " << ID << endl;
     cout << "Price: $" << Price <<  endl;
-    cout << "Dimensions (W x H): " << Width << " " << Height << endl;
+    cout << "Dimensions (W x H): " << Width << " " << Height << endl;*/
 };
 const double & Painting::getPrice() const{
     return Price;
@@ -36,11 +38,10 @@ const double & Painting::getPriceByWidth() const{
     return Width;
 }
 
-const double &Painting::getHeight() const {
+double Painting::getHeight(){
     return Height;
 }
 
 const int &Painting::getID() const {
     return ID;
 }
-

@@ -6,6 +6,10 @@
 #include <iostream>
 #include <fstream>
 #include <algorithm>
+#include <bits/stdc++.h>
+#include <vector>
+#include "Subset.h"
+#include <string>
 using namespace std;
 Algorithm::Algorithm() {
 
@@ -56,6 +60,10 @@ void Algorithm::readFile(){
         expFirst();
           cout << "Testing customAlgo" << endl;
           customAlgo();
+
+    cout << "Testing expFirst()"<< endl;
+    //expFirst();
+    bruteForce();
 }
 
 void Algorithm::expFirst() {
@@ -141,5 +149,70 @@ bool Algorithm::comparePrice(const Painting &i1, const Painting &i2) {
 bool Algorithm::comparePriceByWidth(const Painting &i1, const Painting &i2) {
     return (i1.getPriceByWidth() > i2.getPriceByWidth());
 }
+
+
+
+void Algorithm::bruteForce() {
+    vector <Subset> allSubsets;
+    int count = pow(2, paintingVec.size());
+    for (int i = 0; i < count; i++) {
+        Subset newSubset;
+        for (int j = 0; j < paintingVec.size(); j++) {
+            if ((i & (1 << j)) != 0){
+                newSubset.pushback(paintingVec[j]);
+            }
+        }
+        if (newSubset.getTotalWidth() <= maxSize){
+                allSubsets.push_back(newSubset);
+        }
+    }
+
+    for (int k = 0; k < allSubsets.size(); k++){
+        for (int z = 0; z < allSubsets[k].size(); k++){
+            allSubsets[k].print();
+            cout << allSubsets[k].getTotalValue() << endl;
+            cout << endl;
+        }
+        cout << "\n";
+    }
+
+    Subset maxVal = allSubsets[1];
+    for (int h = 0; h < allSubsets.size()-1; h++){
+        if (maxVal.getTotalValue() < allSubsets[h].getTotalValue()){
+            maxVal = allSubsets[h];
+        }
+    }
+
+    maxVal.print();
+    cout << maxVal.getTotalValue() << endl << endl;
+
+    fstream outputFile;
+    outputFile.open("-bruteForce.txt",ios::out);
+    if(!outputFile)
+    {
+        cout<<"Error in creating file!!!";
+    }
+    else{
+        outputFile << maxVal.getTotalValue();
+        outputFile << endl;
+        for (int i = 0; i < maxVal.size(); i ++){
+            outputFile << maxVal.getVector()[i].getID();
+            outputFile << " ";
+            outputFile << maxVal.getVector()[i].getPrice();
+            outputFile << " ";
+            outputFile << maxVal.getVector()[i].getWidth();
+            outputFile << " ";
+            outputFile << maxVal.getVector()[i].getHeight();
+            outputFile << endl;
+        }
+    }
+
+    maxVal.printPaintings();
+}
+
+
+
+
+
 
 

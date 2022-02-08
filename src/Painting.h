@@ -5,6 +5,7 @@
 #ifndef INC_22S_PA01_COUT_THIS_ONE_HAZEL_ENDL_PAINTING_H
 #define INC_22S_PA01_COUT_THIS_ONE_HAZEL_ENDL_PAINTING_H
 #include <iostream>
+#include <string>
 using namespace std;
 class Painting {
 
