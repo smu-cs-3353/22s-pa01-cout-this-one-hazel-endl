@@ -23,6 +23,8 @@ class Painting {
      double getWidth();
 
     private:
+
+    
         int ID;
         double Price;
         double Width;
