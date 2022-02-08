@@ -15,7 +15,7 @@ Subset::Subset() {
 }
 
 double Subset::getTotalWidth() {
-    double totalWidth;
+    double totalWidth = 0;
 
     for (int i = 0; i < subsetPainting.size(); i++){
         totalWidth += subsetPainting[i].getWidth();
@@ -24,7 +24,7 @@ double Subset::getTotalWidth() {
 }
 
 double Subset::getTotalValue() {
-    double totalValue;
+    double totalValue = 0;
 
     for (int i = 0; i < subsetPainting.size(); i++){
         totalValue += subsetPainting[i].getPrice();
@@ -35,7 +35,6 @@ double Subset::getTotalValue() {
 
 void Subset::pushback(Painting p) {
     subsetPainting.push_back(p);
-
 }
 
 int Subset::size() {

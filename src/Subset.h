@@ -12,7 +12,6 @@
 class Subset {
 public:
     Subset();
-
     double getTotalWidth();
     double getTotalValue();
     void pushback(Painting p);
@@ -20,7 +19,6 @@ public:
     void print();
     void printPaintings();
     vector <Painting> getVector ();
-
 
 private:
     vector <Painting> subsetPainting;

@@ -57,10 +57,8 @@ void Algorithm::readFile(){
         expFirst();
           cout << "Testing customAlgo" << endl;
           customAlgo();
-
-    cout << "Testing expFirst()"<< endl;
-    //expFirst();
-    bruteForce();
+          cout << "Testing bruteForce()" << endl;
+          bruteForce();
 }
 
 void Algorithm::expFirst() {
@@ -147,11 +145,10 @@ bool Algorithm::comparePriceByWidth(const Painting &i1, const Painting &i2) {
     return (i1.getPriceByWidth() > i2.getPriceByWidth());
 }
 
-
-
 void Algorithm::bruteForce() {
     vector <Subset> allSubsets;
     int count = pow(2, paintingVec.size());
+    cout << "The expected # of subsets is: " << count << endl;
     for (int i = 0; i < count; i++) {
         Subset newSubset;
         for (int j = 0; j < paintingVec.size(); j++) {
@@ -164,14 +161,14 @@ void Algorithm::bruteForce() {
         }
     }
 
-    for (int k = 0; k < allSubsets.size(); k++){
-        for (int z = 0; z < allSubsets[k].size(); k++){
-            allSubsets[k].print();
-            cout << allSubsets[k].getTotalValue() << endl;
-            cout << endl;
-        }
-        cout << "\n";
-    }
+//    for (int k = 0; k < allSubsets.size(); k++){
+//        for (int z = 0; z < allSubsets[k].size(); k++){
+//            allSubsets[k].print();
+//            cout << allSubsets[k].getTotalValue() << endl;
+//            cout << endl;
+//        }
+//        cout << "\n";
+//    }
 
     Subset maxVal = allSubsets[1];
     for (int h = 0; h < allSubsets.size()-1; h++){
@@ -180,9 +177,9 @@ void Algorithm::bruteForce() {
         }
     }
 
-    maxVal.print();
-    cout << maxVal.getTotalValue() << endl << endl;
-
+//    cout << "Printing maximized subset: " << endl;
+//    maxVal.print();
+    cout << "Total price from bruteforce algorithm: " << maxVal.getTotalValue() <<  endl;
     fstream outputFile;
     outputFile.open(inputFileString+"-bruteForce.txt",ios::out);
     if(!outputFile)
@@ -193,18 +190,10 @@ void Algorithm::bruteForce() {
         outputFile << maxVal.getTotalValue();
         outputFile << endl;
         for (int i = 0; i < maxVal.size(); i ++){
-            outputFile << maxVal.getVector()[i].getID();
-            outputFile << " ";
-            outputFile << maxVal.getVector()[i].getPrice();
-            outputFile << " ";
-            outputFile << maxVal.getVector()[i].getWidth();
-            outputFile << " ";
-            outputFile << maxVal.getVector()[i].getHeight();
-            outputFile << endl;
+            outputFile << maxVal.getVector()[i].getID()<< " "<< maxVal.getVector()[i].getPrice()<< " "<< maxVal.getVector()[i].getWidth()<< " "<< maxVal.getVector()[i].getHeight()<< endl;
         }
     }
-
-    maxVal.printPaintings();
+   // maxVal.printPaintings();
 }
 
 
