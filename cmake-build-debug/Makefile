@@ -123,6 +123,87 @@ depend:
 	$(MAKE) -f CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/build.make CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/build
 .PHONY : 22s_pa01_cout_this_one_hazel_endl/fast
 
+src/Algorithm.o: src/Algorithm.cpp.o
+
+.PHONY : src/Algorithm.o
+
+# target to build an object file
+src/Algorithm.cpp.o:
+	$(MAKE) -f CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/build.make CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Algorithm.cpp.o
+.PHONY : src/Algorithm.cpp.o
+
+src/Algorithm.i: src/Algorithm.cpp.i
+
+.PHONY : src/Algorithm.i
+
+# target to preprocess a source file
+src/Algorithm.cpp.i:
+	$(MAKE) -f CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/build.make CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Algorithm.cpp.i
+.PHONY : src/Algorithm.cpp.i
+
+src/Algorithm.s: src/Algorithm.cpp.s
+
+.PHONY : src/Algorithm.s
+
+# target to generate assembly for a file
+src/Algorithm.cpp.s:
+	$(MAKE) -f CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/build.make CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Algorithm.cpp.s
+.PHONY : src/Algorithm.cpp.s
+
+src/Painting.o: src/Painting.cpp.o
+
+.PHONY : src/Painting.o
+
+# target to build an object file
+src/Painting.cpp.o:
+	$(MAKE) -f CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/build.make CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Painting.cpp.o
+.PHONY : src/Painting.cpp.o
+
+src/Painting.i: src/Painting.cpp.i
+
+.PHONY : src/Painting.i
+
+# target to preprocess a source file
+src/Painting.cpp.i:
+	$(MAKE) -f CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/build.make CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Painting.cpp.i
+.PHONY : src/Painting.cpp.i
+
+src/Painting.s: src/Painting.cpp.s
+
+.PHONY : src/Painting.s
+
+# target to generate assembly for a file
+src/Painting.cpp.s:
+	$(MAKE) -f CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/build.make CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Painting.cpp.s
+.PHONY : src/Painting.cpp.s
+
+src/Subset.o: src/Subset.cpp.o
+
+.PHONY : src/Subset.o
+
+# target to build an object file
+src/Subset.cpp.o:
+	$(MAKE) -f CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/build.make CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Subset.cpp.o
+.PHONY : src/Subset.cpp.o
+
+src/Subset.i: src/Subset.cpp.i
+
+.PHONY : src/Subset.i
+
+# target to preprocess a source file
+src/Subset.cpp.i:
+	$(MAKE) -f CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/build.make CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Subset.cpp.i
+.PHONY : src/Subset.cpp.i
+
+src/Subset.s: src/Subset.cpp.s
+
+.PHONY : src/Subset.s
+
+# target to generate assembly for a file
+src/Subset.cpp.s:
+	$(MAKE) -f CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/build.make CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Subset.cpp.s
+.PHONY : src/Subset.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -159,6 +240,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... 22s_pa01_cout_this_one_hazel_endl"
+	@echo "... src/Algorithm.o"
+	@echo "... src/Algorithm.i"
+	@echo "... src/Algorithm.s"
+	@echo "... src/Painting.o"
+	@echo "... src/Painting.i"
+	@echo "... src/Painting.s"
+	@echo "... src/Subset.o"
+	@echo "... src/Subset.i"
+	@echo "... src/Subset.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

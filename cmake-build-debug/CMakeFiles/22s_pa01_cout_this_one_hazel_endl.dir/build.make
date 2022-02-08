@@ -70,17 +70,62 @@ CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/Owner/OneDrive/Desktop/22s-pa01-cout-this-one-hazel-endl/src/main.cpp -o CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/main.cpp.s
 
+CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Painting.cpp.o: CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/flags.make
+CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Painting.cpp.o: ../src/Painting.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Owner/OneDrive/Desktop/22s-pa01-cout-this-one-hazel-endl/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Painting.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Painting.cpp.o -c /mnt/c/Users/Owner/OneDrive/Desktop/22s-pa01-cout-this-one-hazel-endl/src/Painting.cpp
+
+CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Painting.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Painting.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/Owner/OneDrive/Desktop/22s-pa01-cout-this-one-hazel-endl/src/Painting.cpp > CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Painting.cpp.i
+
+CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Painting.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Painting.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/Owner/OneDrive/Desktop/22s-pa01-cout-this-one-hazel-endl/src/Painting.cpp -o CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Painting.cpp.s
+
+CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Algorithm.cpp.o: CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/flags.make
+CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Algorithm.cpp.o: ../src/Algorithm.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Owner/OneDrive/Desktop/22s-pa01-cout-this-one-hazel-endl/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Algorithm.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Algorithm.cpp.o -c /mnt/c/Users/Owner/OneDrive/Desktop/22s-pa01-cout-this-one-hazel-endl/src/Algorithm.cpp
+
+CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Algorithm.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Algorithm.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/Owner/OneDrive/Desktop/22s-pa01-cout-this-one-hazel-endl/src/Algorithm.cpp > CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Algorithm.cpp.i
+
+CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Algorithm.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Algorithm.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/Owner/OneDrive/Desktop/22s-pa01-cout-this-one-hazel-endl/src/Algorithm.cpp -o CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Algorithm.cpp.s
+
+CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Subset.cpp.o: CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/flags.make
+CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Subset.cpp.o: ../src/Subset.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Owner/OneDrive/Desktop/22s-pa01-cout-this-one-hazel-endl/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Subset.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Subset.cpp.o -c /mnt/c/Users/Owner/OneDrive/Desktop/22s-pa01-cout-this-one-hazel-endl/src/Subset.cpp
+
+CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Subset.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Subset.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/Owner/OneDrive/Desktop/22s-pa01-cout-this-one-hazel-endl/src/Subset.cpp > CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Subset.cpp.i
+
+CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Subset.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Subset.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/Owner/OneDrive/Desktop/22s-pa01-cout-this-one-hazel-endl/src/Subset.cpp -o CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Subset.cpp.s
+
 # Object files for target 22s_pa01_cout_this_one_hazel_endl
 22s_pa01_cout_this_one_hazel_endl_OBJECTS = \
-"CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/main.cpp.o"
+"CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/main.cpp.o" \
+"CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Painting.cpp.o" \
+"CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Algorithm.cpp.o" \
+"CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Subset.cpp.o"
 
 # External object files for target 22s_pa01_cout_this_one_hazel_endl
 22s_pa01_cout_this_one_hazel_endl_EXTERNAL_OBJECTS =
 
 22s_pa01_cout_this_one_hazel_endl: CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/main.cpp.o
+22s_pa01_cout_this_one_hazel_endl: CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Painting.cpp.o
+22s_pa01_cout_this_one_hazel_endl: CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Algorithm.cpp.o
+22s_pa01_cout_this_one_hazel_endl: CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/src/Subset.cpp.o
 22s_pa01_cout_this_one_hazel_endl: CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/build.make
 22s_pa01_cout_this_one_hazel_endl: CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/Owner/OneDrive/Desktop/22s-pa01-cout-this-one-hazel-endl/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable 22s_pa01_cout_this_one_hazel_endl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/Owner/OneDrive/Desktop/22s-pa01-cout-this-one-hazel-endl/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable 22s_pa01_cout_this_one_hazel_endl"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/22s_pa01_cout_this_one_hazel_endl.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

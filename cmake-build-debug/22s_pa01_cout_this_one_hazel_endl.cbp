@@ -82,6 +82,24 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/mnt/c/Users/Owner/OneDrive/Desktop/22s-pa01-cout-this-one-hazel-endl/src/Algorithm.cpp">
+			<Option target="22s_pa01_cout_this_one_hazel_endl"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Owner/OneDrive/Desktop/22s-pa01-cout-this-one-hazel-endl/src/Algorithm.h">
+			<Option target="22s_pa01_cout_this_one_hazel_endl"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Owner/OneDrive/Desktop/22s-pa01-cout-this-one-hazel-endl/src/Painting.cpp">
+			<Option target="22s_pa01_cout_this_one_hazel_endl"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Owner/OneDrive/Desktop/22s-pa01-cout-this-one-hazel-endl/src/Painting.h">
+			<Option target="22s_pa01_cout_this_one_hazel_endl"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Owner/OneDrive/Desktop/22s-pa01-cout-this-one-hazel-endl/src/Subset.cpp">
+			<Option target="22s_pa01_cout_this_one_hazel_endl"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Owner/OneDrive/Desktop/22s-pa01-cout-this-one-hazel-endl/src/Subset.h">
+			<Option target="22s_pa01_cout_this_one_hazel_endl"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/Owner/OneDrive/Desktop/22s-pa01-cout-this-one-hazel-endl/src/main.cpp">
 			<Option target="22s_pa01_cout_this_one_hazel_endl"/>
 		</Unit>
