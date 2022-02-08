@@ -18,9 +18,6 @@ Algorithm::Algorithm(char* fileName) {
     inputFile = fileName;
     inputFileString = inputFile;
     inputFileString = inputFileString.substr(0, inputFileString.length()-4);
-//    file.open(fileName+'-bruteforce',ios::out);
-//
-//    file.open(fileName+'-custom',ios::out);
     readFile();
 }
 
@@ -62,8 +59,8 @@ void Algorithm::readFile(){
           customAlgo();
 
     cout << "Testing expFirst()"<< endl;
-    expFirst();
-    //bruteForce();
+    //expFirst();
+    bruteForce();
 }
 
 void Algorithm::expFirst() {
@@ -187,7 +184,7 @@ void Algorithm::bruteForce() {
     cout << maxVal.getTotalValue() << endl << endl;
 
     fstream outputFile;
-    outputFile.open("-bruteForce.txt",ios::out);
+    outputFile.open(inputFileString+"-bruteForce.txt",ios::out);
     if(!outputFile)
     {
         cout<<"Error in creating file!!!";

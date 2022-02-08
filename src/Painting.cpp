@@ -24,9 +24,6 @@ Painting::Painting(int IDnum, double value, double w, double h) {
 
 void Painting::print(){
     cout << ID << " " << Price << " " << Width << " " << Height << endl;
-    /*cout << "ID: " << ID << endl;
-    cout << "Price: $" << Price <<  endl;
-    cout << "Dimensions (W x H): " << Width << " " << Height << endl;*/
 };
 const double & Painting::getPrice() const{
     return Price;
