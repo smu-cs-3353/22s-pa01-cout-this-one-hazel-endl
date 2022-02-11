@@ -168,6 +168,9 @@ void Algorithm::bruteForce() {
         Subset newSubset;
         for (int j = 0; j < paintingVec.size(); j++) {
             if ((i & (1 << j)) != 0){
+                    if ((paintingVec[j].getWidth() + newSubset.getTotalWidth()) > maxSize) {
+                        break;
+                    }
                 newSubset.pushback(paintingVec[j]);
             }
         }
