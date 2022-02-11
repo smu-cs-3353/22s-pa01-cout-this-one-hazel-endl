@@ -10,7 +10,9 @@
 #include <vector>
 #include "Subset.h"
 #include <string>
-using namespace std;
+#include <chrono>
+
+using namespace std::chrono;
 Algorithm::Algorithm() {
 
 }
@@ -53,12 +55,25 @@ void Algorithm::readFile(){
         paintingVec.push_back(newPainting);
         inFS.getline(buffer, 3000, ' ');
     }
-        cout << "Testing expFirst()"<< endl;
-        expFirst();
-          cout << "Testing customAlgo" << endl;
-          customAlgo();
-          cout << "Testing bruteForce()" << endl;
-          bruteForce();
+    cout << "Testing expFirst()"<< endl;
+    auto start1 = high_resolution_clock::now();
+    expFirst();
+    auto stop1 = high_resolution_clock::now();
+    cout << "Testing customAlgo" << endl;
+    auto start2 = high_resolution_clock::now();
+    customAlgo();
+    auto stop2 = high_resolution_clock::now();
+    cout << "Testing bruteForce()" << endl;
+    auto start3 = high_resolution_clock::now();
+    bruteForce();
+    auto stop3 = high_resolution_clock::now();
+
+    auto duration1 = duration_cast<microseconds>(stop1 - start1);
+    auto duration2 = duration_cast<microseconds>(stop2 - start2);
+    auto duration3 = duration_cast<microseconds>(stop3 - start3);
+    cout << "Expensive first execution time: " << duration1.count() << endl;
+    cout << "Custom execution time: " << duration2.count() << endl;
+    cout << "Brute Force execution time: " << duration3.count() << endl;
 }
 
 void Algorithm::expFirst() {
@@ -161,14 +176,6 @@ void Algorithm::bruteForce() {
         }
     }
 
-//    for (int k = 0; k < allSubsets.size(); k++){
-//        for (int z = 0; z < allSubsets[k].size(); k++){
-//            allSubsets[k].print();
-//            cout << allSubsets[k].getTotalValue() << endl;
-//            cout << endl;
-//        }
-//        cout << "\n";
-//    }
 
     Subset maxVal = allSubsets[1];
     for (int h = 0; h < allSubsets.size()-1; h++){
@@ -177,8 +184,7 @@ void Algorithm::bruteForce() {
         }
     }
 
-//    cout << "Printing maximized subset: " << endl;
-//    maxVal.print();
+
     cout << "Total price from bruteforce algorithm: " << maxVal.getTotalValue() <<  endl;
     fstream outputFile;
     outputFile.open(inputFileString+"-bruteForce.txt",ios::out);
@@ -193,7 +199,7 @@ void Algorithm::bruteForce() {
             outputFile << maxVal.getVector()[i].getID()<< " "<< maxVal.getVector()[i].getPrice()<< " "<< maxVal.getVector()[i].getWidth()<< " "<< maxVal.getVector()[i].getHeight()<< endl;
         }
     }
-   // maxVal.printPaintings();
+
 }
 
 
