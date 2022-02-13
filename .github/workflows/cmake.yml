@@ -8,7 +8,9 @@ on:
 
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
-  BUILD_TYPE: Release
+  BUILD_TYPE: Debug
+  TEST_EXE: 22s_pa01_cout_this_one_hazel_endl
+  INPUT_FILE: ../input/test.txt
 
 jobs:
   build:
@@ -29,9 +31,13 @@ jobs:
       # Build your program with the given configuration
       run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
 
-    - name: Test
+    - name: Execute our Project!
       working-directory: ${{github.workspace}}/build
-      # Execute tests defined by the CMake configuration.  
-      # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
-      run: ctest -C ${{env.BUILD_TYPE}}
+      run: ${{github.workspace}}/build/${{env.TEST_EXE}}${{env.INPUT_FILE}}
+
+    - name: Output Files
+      uses: actions/upload-artifact@v2
+      with:
+        name: p01_output
+        path: ${{github.workspace}}/output
       
