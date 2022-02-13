@@ -33,7 +33,7 @@ jobs:
 
     - name: Execute our Project!
       working-directory: ${{github.workspace}}/build
-      run: ${{github.workspace}}/build/${{env.TEST_EXE}}${{env.INPUT_FILE}}
+      run: ${{github.workspace}}/build/${{env.TEST_EXE}} ${{env.INPUT_FILE}}
 
     - name: Output Files
       uses: actions/upload-artifact@v2
@@ -41,12 +41,5 @@ jobs:
         name: p01_output
         path: ${{github.workspace}}/output
       
-    - name: run a multi-line script
-      run:
-          echo What is in this directory?
-          ls -o
-          echo 
-          echo Is g++ installed?
-          g++ --version
-          echo
+
       
