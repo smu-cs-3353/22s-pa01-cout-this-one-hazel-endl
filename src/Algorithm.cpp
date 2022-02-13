@@ -6,7 +6,7 @@
 #include <iostream>
 #include <fstream>
 #include <algorithm>
-#include <bits/stdc++.h>
+#include <math.h>
 #include <vector>
 #include "Subset.h"
 #include <string>
