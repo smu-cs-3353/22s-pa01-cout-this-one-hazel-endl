@@ -41,3 +41,12 @@ jobs:
         name: p01_output
         path: ${{github.workspace}}/output
       
+    - name: run a multi-line script
+      run:
+          echo What is in this directory?
+          ls -o
+          echo 
+          echo Is g++ installed?
+          g++ --version
+          echo
+      
