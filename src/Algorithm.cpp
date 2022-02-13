@@ -11,6 +11,7 @@
 #include "Subset.h"
 #include <string>
 using namespace std;
+
 Algorithm::Algorithm() {
 
 }
@@ -18,6 +19,7 @@ Algorithm::Algorithm(char* fileName) {
     inputFile = fileName;
     inputFileString = inputFile;
     inputFileString = inputFileString.substr(0, inputFileString.length()-4);
+    inputFileString = inputFileString.substr(9, inputFileString.length());
     readFile();
 }
 
@@ -85,7 +87,8 @@ for(int i = 0; i< mostExpFirst.size(); i++){
 cout << "The total price from the most expensive first algorithm is: " << totalPrice << endl;
 cout << "Total width taken up: " << totalWidth << endl;
 fstream file;
-file.open(inputFileString+"-highvalue.txt",ios::out); //FIXME fix the .txt being included from initial filename
+
+file.open("../output/"+inputFileString+"-highvalue.txt",ios::out); //FIXME fix the .txt being included from initial filename
     if(!file)
     {
         cout<<"Error in creating file!!!";
@@ -117,14 +120,13 @@ void Algorithm::customAlgo(){
     double totalPrice = 0;
     double totalWidth = 0;
     for(int i = 0; i< bestRatioFirst.size(); i++){
-        //bestRatioFirst.at(i).print();
         totalPrice+= bestRatioFirst.at(i).getPrice();
         totalWidth+= bestRatioFirst.at(i).getWidth();
     }
     cout << "The total price from the custom algorithm is: " << totalPrice<< endl;
     cout << "The total width taken up is: " << totalWidth << endl;
     fstream file;
-    file.open(inputFileString+"-custom.txt",ios::out);
+    file.open("../output/"+inputFileString+"-custom.txt",ios::out);
     if(!file)
     {
         cout<<"Error in creating file!!!";
@@ -160,28 +162,16 @@ void Algorithm::bruteForce() {
                 allSubsets.push_back(newSubset);
         }
     }
-
-//    for (int k = 0; k < allSubsets.size(); k++){
-//        for (int z = 0; z < allSubsets[k].size(); k++){
-//            allSubsets[k].print();
-//            cout << allSubsets[k].getTotalValue() << endl;
-//            cout << endl;
-//        }
-//        cout << "\n";
-//    }
-
     Subset maxVal = allSubsets[1];
     for (int h = 0; h < allSubsets.size()-1; h++){
         if (maxVal.getTotalValue() < allSubsets[h].getTotalValue()){
             maxVal = allSubsets[h];
         }
     }
-
-//    cout << "Printing maximized subset: " << endl;
-//    maxVal.print();
     cout << "Total price from bruteforce algorithm: " << maxVal.getTotalValue() <<  endl;
     fstream outputFile;
-    outputFile.open(inputFileString+"-bruteForce.txt",ios::out);
+    cout << "inputFileString: " << inputFileString << endl;
+    outputFile.open("../output/"+inputFileString+"-bruteForce.txt",ios::out);
     if(!outputFile)
     {
         cout<<"Error in creating file!!!";
@@ -193,7 +183,6 @@ void Algorithm::bruteForce() {
             outputFile << maxVal.getVector()[i].getID()<< " "<< maxVal.getVector()[i].getPrice()<< " "<< maxVal.getVector()[i].getWidth()<< " "<< maxVal.getVector()[i].getHeight()<< endl;
         }
     }
-   // maxVal.printPaintings();
 }
 
 
