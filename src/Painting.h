@@ -7,6 +7,8 @@
 #include <iostream>
 #include <string>
 using namespace std;
+
+//painting class to hold all characteristics of a single painting
 class Painting {
 
     public:

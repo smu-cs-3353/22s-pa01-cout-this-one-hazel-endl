@@ -9,6 +9,7 @@
 #include <vector>
 #include <string>
 
+//subset class to hold combinations of paintings for Brute Force algorithm
 class Subset {
 public:
     Subset();

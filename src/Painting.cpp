@@ -6,6 +6,7 @@ using namespace std;
 #include "Painting.h"
 
 
+//default attributes for debugging
 Painting::Painting() {
      ID = -1;
      Price = -1.0;
@@ -22,6 +23,7 @@ Painting::Painting(int IDnum, double value, double w, double h) {
      PriceByWidth = Price/Width;
 }
 
+//prints out all attributes to the console
 void Painting::print(){
     cout << ID << " " << Price << " " << Width << " " << Height << endl;
 };

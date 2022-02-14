@@ -16,6 +16,7 @@ Algorithm::Algorithm() {
 
 }
 Algorithm::Algorithm(char* fileName) {
+    //create inputFile
     inputFile = fileName;
     inputFileString = inputFile;
     inputFileString = inputFileString.substr(0, inputFileString.length()-4);
@@ -24,13 +25,18 @@ Algorithm::Algorithm(char* fileName) {
 }
 
 void Algorithm::readFile(){
+    //open file
     fstream inFS(inputFile);
+
+    //checks if file is open
     if(!inFS.is_open()){
         cout << "File did not open." << endl;
     }
     else {
         cout << "File opened." << endl;
     }
+
+    //reading in file
     string maxWidth;
     char buffer[3000];
     inFS.getline(buffer, 3000, ' ');
@@ -55,6 +61,8 @@ void Algorithm::readFile(){
         paintingVec.push_back(newPainting);
         inFS.getline(buffer, 3000, ' ');
     }
+
+    //calling all three algorithms
         cout << "Testing expFirst()"<< endl;
         expFirst();
           cout << "Testing customAlgo" << endl;
@@ -63,50 +71,67 @@ void Algorithm::readFile(){
           bruteForce();
 }
 
+// most expensive first algorithm
 void Algorithm::expFirst() {
-sort(paintingVec.begin(), paintingVec.end(), comparePrice);
-vector<Painting> mostExpFirst;
-int sizeTaken = 0;
-int counter = 0;
-while(true){
-    if(counter >= paintingVec.size()) {
-    break;
-    }
-    else if(maxSize - (sizeTaken + paintingVec.at(counter).getWidth())>=0){
-    mostExpFirst.push_back(paintingVec.at(counter));
-    sizeTaken += paintingVec.at(counter).getWidth();
-}
-    counter++;
-}
-double totalPrice = 0;
-double totalWidth = 0;
-for(int i = 0; i< mostExpFirst.size(); i++){
-    totalPrice+= mostExpFirst.at(i).getPrice();
-    totalWidth+= mostExpFirst.at(i).getWidth();
-}
-cout << "The total price from the most expensive first algorithm is: " << totalPrice << endl;
-cout << "Total width taken up: " << totalWidth << endl;
-fstream file;
+    // sorts paintings by price
+    sort(paintingVec.begin(), paintingVec.end(), comparePrice);
 
-file.open("../output/"+inputFileString+"-highvalue.txt",ios::out); //FIXME fix the .txt being included from initial filename
-    if(!file)
-    {
-        cout<<"Error in creating file!!!";
-    }
-    else{
-        file<< totalPrice << endl;
-        for(int i = 0; i<mostExpFirst.size(); i++){
-            file << mostExpFirst.at(i).getID() << " " << mostExpFirst.at(i).getPrice() << " " << mostExpFirst.at(i).getWidth() << " " << mostExpFirst.at(i).getHeight() << endl;
+    //create vector to hold paintings
+    vector<Painting> mostExpFirst;
+    int sizeTaken = 0;
+    int counter = 0;
+
+    //checking if painting fits the wall
+    while(true){
+        if(counter >= paintingVec.size()) {
+        break;
         }
+        else if(maxSize - (sizeTaken + paintingVec.at(counter).getWidth())>=0){
+        mostExpFirst.push_back(paintingVec.at(counter));
+        sizeTaken += paintingVec.at(counter).getWidth();
     }
+        counter++;
+    }
+    double totalPrice = 0;
+    double totalWidth = 0;
+
+    //adds all prices and width
+    for(int i = 0; i< mostExpFirst.size(); i++){
+        totalPrice+= mostExpFirst.at(i).getPrice();
+        totalWidth+= mostExpFirst.at(i).getWidth();
+    }
+    cout << "The total price from the most expensive first algorithm is: " << totalPrice << endl;
+    cout << "Total width taken up: " << totalWidth << endl;
+
+    //creates output file
+    fstream file;
+
+    //names and writes into ouput file
+    file.open("../output/"+inputFileString+"-highvalue.txt",ios::out);
+        if(!file)
+        {
+            cout<<"Error in creating file!!!";
+        }
+        else{
+            file<< totalPrice << endl;
+            for(int i = 0; i<mostExpFirst.size(); i++){
+                file << mostExpFirst.at(i).getID() << " " << mostExpFirst.at(i).getPrice() << " " << mostExpFirst.at(i).getWidth() << " " << mostExpFirst.at(i).getHeight() << endl;
+            }
+        }
 
 }
 
+//custom algorithm
 void Algorithm::customAlgo(){
+    //sorts paintings by price
     sort(paintingVec.begin(), paintingVec.end(), comparePriceByWidth);
+
+    //creates vector to hold all paintings
     vector<Painting> bestRatioFirst;
     int sizeTaken = 0;
     int counter = 0;
+
+    //checking if painting fits the wall
     while(true){
         if(counter >= paintingVec.size()) {
             break;
@@ -117,6 +142,8 @@ void Algorithm::customAlgo(){
         }
         counter++;
     }
+
+    //adds all prices and width
     double totalPrice = 0;
     double totalWidth = 0;
     for(int i = 0; i< bestRatioFirst.size(); i++){
@@ -125,7 +152,11 @@ void Algorithm::customAlgo(){
     }
     cout << "The total price from the custom algorithm is: " << totalPrice<< endl;
     cout << "The total width taken up is: " << totalWidth << endl;
+
+    //creates output file
     fstream file;
+
+    //names and write into output file
     file.open("../output/"+inputFileString+"-custom.txt",ios::out);
     if(!file)
     {
@@ -148,7 +179,10 @@ bool Algorithm::comparePriceByWidth(const Painting &i1, const Painting &i2) {
 }
 
 void Algorithm::bruteForce() {
+    //create vector to hold combinations of paintings on a wall
     vector <Subset> allSubsets;
+
+    //creating all possible subsets of paintings
     int count = pow(2, paintingVec.size());
     cout << "The expected # of subsets is: " << count << endl;
     for (int i = 0; i < count; i++) {
@@ -158,10 +192,14 @@ void Algorithm::bruteForce() {
                 newSubset.pushback(paintingVec[j]);
             }
         }
+
+        //checks if a set of paintings fit on a wall and adds to vector
         if (newSubset.getTotalWidth() <= maxSize){
                 allSubsets.push_back(newSubset);
         }
     }
+
+    //finds the painting combination with the highest total value
     Subset maxVal = allSubsets[1];
     for (int h = 0; h < allSubsets.size()-1; h++){
         if (maxVal.getTotalValue() < allSubsets[h].getTotalValue()){
@@ -169,7 +207,11 @@ void Algorithm::bruteForce() {
         }
     }
     cout << "Total price from bruteforce algorithm: " << maxVal.getTotalValue() <<  endl;
+
+    //create output file
     fstream outputFile;
+
+    //names and writes into ouput file
     cout << "inputFileString: " << inputFileString << endl;
     outputFile.open("../output/"+inputFileString+"-bruteForce.txt",ios::out);
     if(!outputFile)

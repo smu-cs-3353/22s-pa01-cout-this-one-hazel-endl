@@ -14,6 +14,7 @@ Subset::Subset() {
 
 }
 
+//traverses vector to get total width of paintings
 double Subset::getTotalWidth() {
     double totalWidth = 0;
 
@@ -23,6 +24,7 @@ double Subset::getTotalWidth() {
     return totalWidth;
 }
 
+//traverses vector to get total price of paintings
 double Subset::getTotalValue() {
     double totalValue = 0;
 
